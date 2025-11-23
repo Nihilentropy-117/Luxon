@@ -1,0 +1,81 @@
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1>Our Work</h1>
+        <p class="lead">See how we've helped Cincinnati families protect their homes with professional smart home installations.</p>
+    </div>
+</section>
+
+<!-- Filter Options -->
+<section class="portfolio-filters" ng-controller="PortfolioController">
+    <div class="container">
+        <div class="filter-buttons">
+            <button class="filter-btn" ng-class="{'active': filter === 'all'}" ng-click="setFilter('all')">All Projects</button>
+            <button class="filter-btn" ng-class="{'active': filter === 'security'}" ng-click="setFilter('security')">Security Systems</button>
+            <button class="filter-btn" ng-class="{'active': filter === 'lighting'}" ng-click="setFilter('lighting')">Smart Lighting</button>
+            <button class="filter-btn" ng-class="{'active': filter === 'automation'}" ng-click="setFilter('automation')">Whole Home Automation</button>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Grid -->
+<section class="portfolio-grid-section" ng-controller="PortfolioController">
+    <div class="container">
+        <div class="portfolio-grid-large">
+            <div class="portfolio-card-large" ng-repeat="project in projects | filter:filterProjects">
+                <div class="portfolio-image-placeholder">
+                    <p>{{project.title}}</p>
+                </div>
+                <div class="portfolio-info">
+                    <h3>{{project.title}}</h3>
+                    <p class="location">{{project.neighborhood}}</p>
+                    <p class="description">{{project.description}}</p>
+                    <div class="systems-included">
+                        <span class="badge" ng-repeat="system in project.systems">{{system}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Case Study -->
+<section class="case-study">
+    <div class="container">
+        <h2 class="section-title">Featured Project: Complete Home Security Transformation</h2>
+        <div class="case-study-content">
+            <div class="case-study-section">
+                <h3>The Challenge</h3>
+                <p>A Hyde Park family needed comprehensive security coverage for their corner lot property with multiple entry points and limited existing infrastructure. They were frustrated with cloud-based systems and monthly subscription fees.</p>
+            </div>
+            <div class="case-study-section">
+                <h3>Our Solution</h3>
+                <p>We designed an 8-camera Reolink system with strategic placement covering all entry points, driveway, and backyard. Integrated a smart video doorbell and upgraded their WiFi network for optimal performance. All footage stored locally on a 4TB NVR with 60-day retention.</p>
+            </div>
+            <div class="case-study-section">
+                <h3>Results</h3>
+                <ul>
+                    <li>✓ Complete property coverage with zero blind spots</li>
+                    <li>✓ Crystal-clear 4K footage day and night</li>
+                    <li>✓ No monthly fees - one-time investment</li>
+                    <li>✓ Easy mobile access from anywhere</li>
+                    <li>✓ Complete privacy with local storage</li>
+                </ul>
+            </div>
+            <div class="case-study-testimonial">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"We couldn't be happier with our new security system. The installation was seamless, and knowing our footage stays private gives us real peace of mind. No more monthly fees is just the cherry on top!"</p>
+                <p class="testimonial-author"><strong>The Johnson Family</strong> - Hyde Park</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready for Your Own Smart Home Transformation?</h2>
+        <p>Let's discuss how we can customize a solution for your home.</p>
+        <a href="#!/contact" class="btn btn-primary btn-lg">Schedule Free Consultation</a>
+    </div>
+</section>

@@ -1,0 +1,172 @@
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1>Get in Touch</h1>
+        <p class="lead">Ready to protect your home? Schedule your free security audit or contact us today.</p>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section" ng-controller="ContactController">
+    <div class="container">
+        <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper">
+                <h2>Schedule Your Free Home Security Audit</h2>
+                <p>Fill out the form below and we'll get back to you within 4 hours during business hours.</p>
+
+                <form name="contactForm" ng-submit="submitForm()" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            ng-model="formData.name"
+                            class="form-control"
+                            required>
+                        <span class="error" ng-show="contactForm.name.$touched && contactForm.name.$invalid">Name is required</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            ng-model="formData.email"
+                            class="form-control"
+                            required>
+                        <span class="error" ng-show="contactForm.email.$touched && contactForm.email.$invalid">Valid email is required</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone *</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            ng-model="formData.phone"
+                            class="form-control"
+                            required>
+                        <span class="error" ng-show="contactForm.phone.$touched && contactForm.phone.$invalid">Phone is required</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="zipcode">Neighborhood/ZIP Code *</label>
+                        <input
+                            type="text"
+                            id="zipcode"
+                            name="zipcode"
+                            ng-model="formData.zipcode"
+                            class="form-control"
+                            required>
+                        <span class="error" ng-show="contactForm.zipcode.$touched && contactForm.zipcode.$invalid">ZIP code is required</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectType">Project Type *</label>
+                        <select
+                            id="projectType"
+                            name="projectType"
+                            ng-model="formData.projectType"
+                            class="form-control"
+                            required>
+                            <option value="">Select project type</option>
+                            <option value="Security System">Security System</option>
+                            <option value="Smart Lighting">Smart Lighting</option>
+                            <option value="Home Automation">Home Automation</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span class="error" ng-show="contactForm.projectType.$touched && contactForm.projectType.$invalid">Project type is required</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            ng-model="formData.message"
+                            class="form-control"
+                            rows="5"></textarea>
+                    </div>
+
+                    <div class="alert alert-success" ng-show="formStatus.success">
+                        {{formStatus.message}}
+                    </div>
+                    <div class="alert alert-error" ng-show="formStatus.error">
+                        {{formStatus.message}}
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-block"
+                        ng-disabled="contactForm.$invalid || formStatus.submitting">
+                        <span ng-show="!formStatus.submitting">Send Message</span>
+                        <span ng-show="formStatus.submitting">Sending...</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info-wrapper">
+                <h3>Contact Information</h3>
+
+                <div class="contact-method">
+                    <h4>📞 Call or Text</h4>
+                    <p><a href="tel:513XXXXXXX" class="contact-link">(513) XXX-XXXX</a></p>
+                    <p class="small-text">Typically respond within 4 hours during business hours</p>
+                </div>
+
+                <div class="contact-method">
+                    <h4>📧 Email</h4>
+                    <p><a href="mailto:hello@luxonhome.com" class="contact-link">hello@luxonhome.com</a></p>
+                </div>
+
+                <div class="contact-method">
+                    <h4>🕐 Hours</h4>
+                    <p><strong>Installations:</strong><br>Saturdays 8am-6pm</p>
+                    <p><strong>Consultations:</strong><br>Tuesday/Thursday evenings 6-9pm</p>
+                </div>
+
+                <div class="contact-method">
+                    <h4>📍 Service Area</h4>
+                    <p>Proudly serving Cincinnati's east side neighborhoods</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h4>Do you offer financing?</h4>
+                <p>We accept all major credit cards. Payment is 50% deposit, 50% upon completion.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How long does installation take?</h4>
+                <p>Most systems install in 4-8 hours on a Saturday. We'll give you a specific time estimate during consultation.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Do you require contracts?</h4>
+                <p>No. Unlike ADT/Vivint, we never require contracts. You're free to use our services when you need them.</p>
+            </div>
+            <div class="faq-item">
+                <h4>What about monthly fees?</h4>
+                <p>Zero monthly fees. You own the equipment outright and all footage is stored locally on your property.</p>
+            </div>
+            <div class="faq-item">
+                <h4>What if I need help after installation?</h4>
+                <p>Direct phone/text access to me for support. Annual maintenance contracts also available for comprehensive coverage.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Do you service my neighborhood?</h4>
+                <p>We primarily serve Cincinnati's east side (Hyde Park, Mt. Lookout, Oakley, Montgomery, etc). Contact us to confirm your area.</p>
+            </div>
+        </div>
+    </div>
+</section>

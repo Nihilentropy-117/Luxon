@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="luxonApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxon - Privacy-First Smart Home Installation for Cincinnati</title>
+    <meta name="description" content="Professional smart home installation in Cincinnati. No subscriptions, no contracts. Just intelligent home security that respects your privacy.">
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" ng-controller="NavController">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#!/" class="logo">
+                    <h1>LUXON</h1>
+                </a>
+                <button class="mobile-menu-toggle" ng-click="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" ng-class="{'mobile-open': mobileMenuOpen}">
+                    <li><a href="#!/" ng-class="{'active': isActive('/')}">Home</a></li>
+                    <li><a href="#!/services" ng-class="{'active': isActive('/services')}">Services</a></li>
+                    <li><a href="#!/portfolio" ng-class="{'active': isActive('/portfolio')}">Portfolio</a></li>
+                    <li><a href="#!/about" ng-class="{'active': isActive('/about')}">About</a></li>
+                    <li><a href="#!/contact" ng-class="{'active': isActive('/contact')}">Contact</a></li>
+                    <li class="nav-phone">(513) 400-6719</li>
+                    <li><a href="#!/contact" class="cta-button">Schedule Audit</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main ng-view></main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LUXON</h3>
+                    <p>Privacy-First Smart Home Installation for Cincinnati</p>
+                    <div class="footer-badges">
+                        <span class="badge">Licensed & Insured</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#!/">Home</a></li>
+                        <li><a href="#!/services">Services</a></li>
+                        <li><a href="#!/portfolio">Portfolio</a></li>
+                        <li><a href="#!/about">About</a></li>
+                        <li><a href="#!/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Service Areas</h4>
+                    <ul>
+                        <li>Hyde Park</li>
+                        <li>Milford</li>
+                        <li>Oakley</li>
+                        <li>Montgomery</li>
+                        <li>Indian Hill</li>
+                        <li>Blue Ash</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:513XXXXXXX">(513) 400-6719</a></li>
+                        <li><a href="mailto:hello@luxonhome.com">hello@luxon.dev</a></li>
+                        <li>Cincinnati, OH</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2009-2025 Luxon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AngularJS App -->
+    <script src="/js/app.js"></script>
+    <script src="/js/controllers.js"></script>
+</body>
+</html>
